@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_Misyuro.Kirill_Logical", "Lab3_Misyuro.Kirill_Logical.csproj", "{4621C26F-3510-493C-8733-DDDF51B5F36F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4621C26F-3510-493C-8733-DDDF51B5F36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4621C26F-3510-493C-8733-DDDF51B5F36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4621C26F-3510-493C-8733-DDDF51B5F36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4621C26F-3510-493C-8733-DDDF51B5F36F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90284D87-8C30-42DB-BB47-2289EA32F51C}
+	EndGlobalSection
+EndGlobal
