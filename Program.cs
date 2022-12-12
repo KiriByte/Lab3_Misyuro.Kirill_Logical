@@ -1,12 +1,15 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Globalization;
+using System.Text;
 
 namespace Lab3_Misyuro.Kirill_Logical
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Program md = new Program();
+
             //Check for correctness of the entered number of operators which should be >1
             uint amountOperands = 0;
             bool isNumber;
@@ -58,45 +61,36 @@ namespace Lab3_Misyuro.Kirill_Logical
             bool[] result = new bool[tableTruth.GetLength(0)];
 
             //Filling in the truth table
+
             for (int i = 0; i < tableTruth.GetLength(0); i++)
             {
-                for (int j = tableTruth.GetLength(1) - 1; j >= 0; j--)
+                for (int j = 0; j < tableTruth.GetLength(1); j++)
                 {
-                    tableTruth[i, j] = md.GetBit(i, j);
+                    tableTruth[i, tableTruth.GetLength(1) - 1 - j] = md.GetBit(i, j);
                 }
             }
 
-            //Operations are currently handled from left to right. Logical operations have execution precedence.
-            //Logical AND operator &
-            //Logical exclusive OR operator ^
-            //Logical OR operator |
-            //Conditional logical AND operator &&
-            //Conditional logical OR operator ||
-            //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
+            bool[,] tableTruthCopy = tableTruth;
+            string formulaCopy = formula;
 
-            //TODO: Solve the problem priority of operator
+            result = md.Test(formulaCopy, tableTruthCopy);
 
-            //Truth table solution
-            for (int i = 0; i < tableTruth.GetLength(0); i++)
-            {
-                result[i] = tableTruth[i, 0];
-            }
-            for (int i = 0; i < tableTruth.GetLength(0); i++)
-            {
-                for (int j = 0; j <= operators.Length - 1; j++)
-                {
-                    result[i] = md.SolveBool(result[i], operators[j], tableTruth[i, j + 1]);
-                }
-            }
 
             //Output truth table
+
+            for (int i = 0; i < operands.Length; i++)
+            {
+                Console.Write("{0,-4}", operands[i]);
+            }
+            Console.WriteLine("{0,-4}", formula);
             for (int i = 0; i < tableTruth.GetLength(0); i++)
             {
-                for (int j = (int)amountOperands - 1; j >= 0; j--)
+                for (int j = 0; j < (int)amountOperands; j++)
                 {
-                    Console.Write("{0,4}", md.ConvertBoolToInt(tableTruth[i, j]));
+                    Console.Write("{0,-4}", md.ConvertBoolToInt(tableTruth[i, j]));
+
                 }
-                Console.Write("{0,4}", md.ConvertBoolToInt(result[i]));
+                Console.Write("{0,-4}", md.ConvertBoolToInt(result[i]));
                 Console.WriteLine();
             }
         }
@@ -151,11 +145,128 @@ namespace Lab3_Misyuro.Kirill_Logical
                     return a || b;
                 case "^":
                     return a ^ b;
+                default: return false;
             }
-            return false;
         }
 
 
+        bool[] Test(string formula, bool[,] tableTruth)
+        {
+            ////Logical AND operator &
+            ////Logical exclusive OR operator ^
+            ////Logical OR operator |
+            ////Conditional logical AND operator &&
+            ////Conditional logical OR operator ||
+            bool[] result = new bool[tableTruth.GetLength(0)];
+            int index;
+            bool[,] tableTruthCopy = tableTruth;
+            string[] formulaSplit = formula.Split(' ');
+            do
+            {
+                index = Array.IndexOf(formulaSplit, "&");
+
+                if (index > 0)
+                {
+
+                    for (int i = 0; i < tableTruthCopy.GetLength(0); i++)
+                    {
+                        result[i] = SolveBool(tableTruthCopy[i, (index - 1) / 2], formulaSplit[index], tableTruthCopy[i, (index + 1) / 2]);
+                    }
+                    ShortFormula(formulaSplit, index);
+                };
+            }
+            while (index > 0);
+            do
+            {
+                index = Array.IndexOf(formulaSplit, "^");
+                if (index > 0)
+                {
+
+                    for (int i = 0; i < tableTruthCopy.GetLength(0); i++)
+                    {
+                        result[i] = SolveBool(tableTruthCopy[i, (index - 1) / 2], formulaSplit[index], tableTruthCopy[i, (index + 1) / 2]);
+                    }
+                    ShortFormula(formulaSplit, index);
+                };
+            }
+            while (index > 0);
+            do
+            {
+                index = Array.IndexOf(formulaSplit, "|");
+                if (index > 0)
+                {
+
+                    for (int i = 0; i < tableTruthCopy.GetLength(0); i++)
+                    {
+                        result[i] = SolveBool(tableTruthCopy[i, (index - 1) / 2], formulaSplit[index], tableTruthCopy[i, (index + 1) / 2]);
+
+                    }
+                    ShortFormula(formulaSplit, index);
+                };
+            }
+            while (index > 0);
+            do
+            {
+                index = Array.IndexOf(formulaSplit, "&&");
+                if (index > 0)
+                {
+
+                    for (int i = 0; i < tableTruthCopy.GetLength(0); i++)
+                    {
+                        result[i] = SolveBool(tableTruthCopy[i, (index - 1) / 2], formulaSplit[index], tableTruthCopy[i, (index + 1) / 2]);
+
+                    }
+                    ShortFormula(formulaSplit, index);
+                };
+            }
+            while (index > 0);
+            do
+            {
+                index = Array.IndexOf(formulaSplit, "||");
+                if (index > 0)
+                {
+
+                    for (int i = 0; i < tableTruthCopy.GetLength(0); i++)
+                    {
+                        result[i] = SolveBool(tableTruthCopy[i, (index - 1) / 2], formulaSplit[index], tableTruthCopy[i, (index + 1) / 2]);
+
+
+                    }
+
+                    ShortFormula(formulaSplit, index);
+                };
+            }
+            while (index > 0);
+
+            return result;
+        }
+
+
+        void ShortFormula(string[] array, int index)
+        {
+            array[index - 1] = string.Join("", array[index - 1], array[index + 1]);
+            array[index] = "";
+            array[index + 1] = "";
+
+
+            Array.Copy(array, index + 2, array, index, array.Length - 2 - index);
+
+
+            array[array.Length - 1] = "";
+            array[array.Length - 2] = "";
+            Console.WriteLine();
+
+        }
+
+        void ShortTable(bool[,] table, int index, bool result)
+        {
+            bool[,] array = table;
+            array[0, index - 1] = result;
+            Array.Copy(array, index + 2, array, index, array.Length - 2 - index); ;
+            array[0, array.Length - 1] = false;
+            array[0, array.Length - 2] = false;
+
+        }
 
     }
 }

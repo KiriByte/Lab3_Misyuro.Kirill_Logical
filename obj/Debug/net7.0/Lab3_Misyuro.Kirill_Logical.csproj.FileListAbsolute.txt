@@ -1,0 +1,15 @@
+H:\Projects\Lab3_Misyuro.Kirill_Logical\bin\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.exe
+H:\Projects\Lab3_Misyuro.Kirill_Logical\bin\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.deps.json
+H:\Projects\Lab3_Misyuro.Kirill_Logical\bin\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.runtimeconfig.json
+H:\Projects\Lab3_Misyuro.Kirill_Logical\bin\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.dll
+H:\Projects\Lab3_Misyuro.Kirill_Logical\bin\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.pdb
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.csproj.AssemblyReference.cache
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.GeneratedMSBuildEditorConfig.editorconfig
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.AssemblyInfoInputs.cache
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.AssemblyInfo.cs
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.csproj.CoreCompileInputs.cache
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.dll
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\refint\Lab3_Misyuro.Kirill_Logical.dll
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.pdb
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\Lab3_Misyuro.Kirill_Logical.genruntimeconfig.cache
+H:\Projects\Lab3_Misyuro.Kirill_Logical\obj\Debug\net7.0\ref\Lab3_Misyuro.Kirill_Logical.dll

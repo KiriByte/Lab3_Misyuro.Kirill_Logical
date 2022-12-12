@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Lab3_Misyuro.Kirill_Logical/1.0.0": {
+        "runtime": {
+          "Lab3_Misyuro.Kirill_Logical.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lab3_Misyuro.Kirill_Logical/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
